@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>蒼井枯乃-Official</title>
+<link rel="icon" href="icon.png" />
+<style>
+  body {
+    margin: 0;
+    font-family: "Zen Maru Gothic", sans-serif;
+    background: radial-gradient(ellipse at bottom, #0a1a2a 0%, #000000 80%);
+    color: #e6f7ff;
+    overflow-x: hidden;
+  }
+
+  /* 星空アニメ（星密度大幅アップ） */
+  .stars, .stars2, .stars3 {
+    position: fixed;
+    width: 2000px;
+    height: 2000px;
+    background-repeat: repeat;
+    background-size: contain;
+    animation: moveStars 120s linear infinite;
+    top: -500px;
+    left: -500px;
+    z-index: -1;
+  }
+  .stars {
+    background-image: url("data:image/svg+xml,\
+    <svg xmlns='http://www.w3.org/2000/svg' width='2' height='2'>\
+    <circle cx='1' cy='1' r='1' fill='white' /></svg>");
+    opacity: 0.9;   /* 前回より密度↑ */
+  }
+  .stars2 {
+    background-image: url("data:image/svg+xml,\
+    <svg xmlns='http://www.w3.org/2000/svg' width='3' height='3'>\
+    <circle cx='1.5' cy='1.5' r='1.5' fill='white' /></svg>");
+    opacity: 0.5;
+    animation-duration: 180s;
+  }
+  .stars3 {
+    background-image: url("data:image/svg+xml,\
+    <svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'>\
+    <circle cx='2' cy='2' r='2' fill='white' /></svg>");
+    opacity: 0.3;
+    animation-duration: 240s;
+  }
+
+  @keyframes moveStars {
+    from { transform: translateY(0); }
+    to { transform: translateY(1000px); }
+  }
+
+  header {
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(0, 40, 70, 0.35);
+    backdrop-filter: blur(4px);
+    font-size: 1.6em;
+    letter-spacing: 2px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+
+  nav button {
+    background: rgba(20, 70, 100, 0.6);
+    color: #ccefff;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.25s;
+    backdrop-filter: blur(4px);
+  }
+  nav button:hover {
+    background: rgba(50, 160, 200, 0.9);
+    transform: scale(1.05);
+  }
+
+  section {
+    display: none;
+    width: min(900px, 90%);
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(0, 30, 50, 0.4);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    animation: fadein 0.5s ease forwards;
+  }
+
+  @keyframes fadein {
+    from { opacity: 0; transform: translateY(5px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* 作品カード */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .card {
+    width: 260px;
+    background: rgba(0, 40, 60, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,255,255,0.2);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 16px rgba(0,255,255,0.4);
+  }
+  .card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .card-desc {
+    font-size: 0.9em;
+    opacity: 0.85;
+  }
+
+  a {
+    color: #a0d7ff;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- 星空 -->
+<div class="stars"></div>
+<div class="stars2"></div>
+<div class="stars3"></div>
+
+<header>蒼井枯乃 - Official Web</header>
+
+<nav>
+  <button onclick="showPage('home')">ホーム</button>
+  <button onclick="showPage('guideline')">ガイドライン・免責</button>
+  <button onclick="showPage('works')">作品</button>
+  <button onclick="showPage('links')">SNS</button>
+  <button onclick="showPage('about')">作者について</button>
+</nav>
+
+<!-- ホーム（デフォルト表示） -->
+<section id="home">
+
+  <!-- ★ キャッチコピー -->
+  <div style="
+    text-align:center; 
+    margin-top:15px; 
+    font-size:1.2em; 
+    font-weight:bold;
+    opacity:0.95;
+  ">
+    小さな創作物語を、あなたへ<br>
+  </div>
+  <!-- 既存のホームテキスト -->
+  <p>こちらは誰かに届く物語を作ることを目指す蒼井枯乃の公式ホームページです。</p>
+    初めて制作したホームページですので不備があるかと思います。不備があった際はご一報ください。誠心誠意、対処いたします。
+  <p>ここでは作品情報などを発信していく予定です。</p>
+    
+
+</section>
+
+    
+<!-- ガイドライン -->
+<section id="guideline">
+  <h2>ガイドライン・免責事項</h2>
+  <p><strong>蒼井枯乃の制作物に関するガイドラインと免責事項です。</strong></p>
+  <p><strong>ガイドライン・免責事項は予告なく改定される場合がございますのであらかじめご了承ください。</strong></p><br>
+    
+<p><strong>ガイドライン</strong></p>
+作品の実況・二次創作等は歓迎です。実況・二次創作にあたって必ず以下の詳細をご確認ください。<br>　　
+      <br>
+以下の目的で蒼井枯乃の制作物を利用することはおやめください。<br>
+    ・特定の誰かの名誉、信条等を侵害すること。誰かの権利を侵害すること。<br>
+    ・特定の政党や宗教、思想を支援すること。もしくは貶めること。<br>
+    ・反社会的な行為の正当化。<br>
+    ・無断で蒼井枯乃の制作したキャラクターを利用し、有料サイト等で二次創作物を販売すること。<br>
+<br>  
+    
+　<p>ゲーム実況について</p>
+    ゲームを利用した動画の収益化をしていただいても構いません。ただし、収益化や投げ銭利用の際は、必ずゲームタイトルとリンク双方の表記をお願い致します。<br>
+    ゲームのネタバレを示唆する画像のサムネイル使用などはおやめください。<br>
+    ネタバレを示唆する画像でない場合、蒼井枯乃の制作したキャラクターをサムネイルに据えていただくことは構いません。<br>
+<br>
+
+　<p>二次創作について</p>
+    趣味の範囲での二次創作及び公開、販売は可能です(X、Youtube上などに二次創作漫画や動画をアップロードしていただくこと、同人誌としてイベントで書籍を販売することなど)。ただし、収益が発生する場で利用する場合は、どこかにゲームタイトルの表記をお願い致します。作者名も併せて表記していただけると嬉しいです。<br>
+    性的描写・残酷描写なども制作していただいて構いませんが、その場合は必ずワンクッションを置くようにお願い致します。<br>
+    著しいキャラ崩壊は避けていただけますと幸いです(行き過ぎていなければまったく構いません)。<br>
+<br>    
+    
+<p>
+    XのDM等で「プレイした」「二次創作した」「ここがよかった」「ここを直すといい」等、教えていただければ作者が見に行きますので、ぜひ教えていただけると嬉しいです。<br>
+    また作品ページ公開時に個別ガイドラインを掲載しますので、そちらも御覧ください。
+  </p>
+<br>
+<p><strong>免責事項</strong></p>
+    コンテンツの利用は自己責任でお願い致します。<br>
+    制作物により生じたいかなる問題、争いについて、蒼井枯乃は一切の責任を負いかねます。<br>
+    プレイヤーがゲームを利用した時点で、このガイドラインに同意したものとみなしますのでご了承ください。<br>
+    不明点がありましたら、お手数ですがXのDMまでご連絡ください。
+　<p>　　</p>
+    2025年11月29日制定
+</section>
+
+<!-- 作品ページ（カード式） -->
+<section id="works">
+  <h2>作品一覧</h2>
+  <p>※構想中の２作を表示しています。</p>
+
+  <div class="card-container">
+    <div class="card">
+      <div class="card-title">学校七不思議</div>
+      <div class="card-desc">
+        ホラー寄り・探索型のノベルゲームを予定。  
+        主人公が自らにかけられた呪いと七不思議の秘密とに迫る物語。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">ペカド</div>
+      <div class="card-desc">
+        擬人化×罪モチーフのダークファンタジー。  
+        ７つの“罪”に翻弄されるキャラクターたちの群像劇。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SNS -->
+<section id="links">
+  <h2>SNSリンク</h2>
+
+  <ul class="sns-list">
+    <li><a href="https://x.com/kareno_1126_bc" target="_blank">X（旧Twitter）</a></li>
+    <li><a href="https://note.com/kareno_aoi1126" target="_blank">note</a></li>
+    <li><a href="https://www.youtube.com/@AoiKareno" target="_blank">YouTube</a></li>
+    <li><a href="https://www.tiktok.com/@user8119619035699?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a></li>
+    <li><a href="https://www.instagram.com/karenoaoi1126" target="_blank">Instagram</a></li>
+    <li><a href="https://marshmallow-qa.com/xkcp9770oobskmb?t=wjTxqg&utm_medium=url_text&utm_source=promotion" target="_blank">マシュマロ</a></li>
+
+  </ul>
+
+  <h3>今後追加予定のアカウント</h3>
+  <p>今後追加予定のアカウントはありません。</p>
+</section>
+
+<!-- 作者について -->
+<section id="about">
+  <!-- ★ アイコンを最上部に配置＆丸く -->
+  <div style="text-align:center; margin-top:10px;">
+    <img src="icon.png" 
+         alt="icon"
+         style="
+           width:150px; 
+           height:150px; 
+           border-radius:50%; 
+           box-shadow:0 0 15px rgba(0,255,255,0.35);
+         " />
+  </div>
+
+　<h2>作者について</h2>
+  <p><strong>蒼井枯乃と申します。</strong></p>
+  My name is Kareno Aoi.
+  <p>
+    <strong>2025.11.27〜　活動開始</strong><br>
+    教室で静かに本を呼んでいるタイプの人間です。<br>
+    インドア派。小学生の頃、休み時間に体育館や校庭へ行かなすぎて先生から心配されたことがあります。<br>
+中学生までインターネットとは縁のない生活を送り、高校生からネットを触り始めました。
+    2025年8月、「ゲームが作りたい」という衝動でXのアカウントを作成しましたが放置していました。このままではいけないと思い、2025年11月27日から本格的にアカウントを始動させることを決めました。<br>
+    気持ちのいいどんでん返しが起こるノベルゲームを作りたくてプログラムとストーリーの書き方を勉強しています。<br>
+  </p>
+</section>
+
+<script>
+  // ページ切り替え
+  function showPage(id) {
+    document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
+    document.getElementById(id).style.display = "block";
+    window.scrollTo(0, 0);
+  }
+
+  // ★ ページ読み込み時にホームを自動表示
+  window.onload = () => {
+    showPage("home");
+  };
+</script>
+
+</body>
+</html>
